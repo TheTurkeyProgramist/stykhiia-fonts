@@ -1,0 +1,12 @@
+fonttools
+ufoLib2
+skia-pathops
+numpy
+scipy
+scikit-image
+Pillow
+glyphsets
+fontmake
+ttfautohint-py
+brotli
+fontbakery[googlefonts]
