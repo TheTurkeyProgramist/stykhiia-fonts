@@ -1,0 +1,6 @@
+sources:
+  - StykhiiaText.ufo
+familyName: Stykhiia Text
+buildVariable: false
+buildStatic: true
+autohintTTF: true
