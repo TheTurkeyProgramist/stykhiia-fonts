@@ -1,0 +1,31 @@
+languagesystem DFLT dflt;
+languagesystem latn dflt;
+languagesystem cyrl dflt;
+
+@CombTop = [gravecomb acutecomb uni0302 tildecomb uni0304 uni0306 uni0307 uni0308 uni030A uni030B uni030C];
+@CombBottom = [uni0326 uni0327 uni0328];
+
+feature ccmp {
+  sub [i uni0456]' @CombTop by dotlessi;
+  sub [j uni0458]' @CombTop by uni0237;
+  sub [i uni0456]' @CombBottom @CombTop by dotlessi;
+  sub [i uni0456]' @CombBottom @CombBottom @CombTop by dotlessi;
+  sub [j uni0458]' @CombBottom @CombTop by uni0237;
+  sub iogonek' @CombTop by iogonek.dotless;
+  sub iogonek' @CombBottom @CombTop by iogonek.dotless;
+  sub [i uni0456]' @CombBottom @CombBottom @CombBottom @CombTop by dotlessi;
+} ccmp;
+
+feature tnum {
+  sub [zero one two three four five six seven eight nine] by [zero.tf one.tf two.tf three.tf four.tf five.tf six.tf seven.tf eight.tf nine.tf];
+} tnum;
+
+feature kern {
+  pos [T uni0162 Tcaron uni021A uni0422 uni0413 uni0403 uni0490] [a agrave aacute acircumflex atilde adieresis aring amacron abreve aogonek c ccedilla cacute ccircumflex cdotaccent ccaron d dcaron e egrave eacute ecircumflex edieresis emacron ebreve edotaccent eogonek ecaron g gcircumflex gbreve gdotaccent uni0123 o ograve oacute ocircumflex otilde odieresis omacron obreve ohungarumlaut q s sacute scircumflex scedilla scaron uni0219 u ugrave uacute ucircumflex udieresis utilde umacron ubreve uring uhungarumlaut uogonek uni0430 uni0441 uni0435 uni0450 uni0451 uni0434 uni043E uni0454 uni044E uni044C uni0437 uni0444 uni044F ae oe oslash] -80;
+  pos [F P uni0420 Y Yacute Ycircumflex Ydieresis Ygrave V W Wcircumflex Wgrave Wacute Wdieresis uni0423 uni040E uni04EE] [a agrave aacute acircumflex atilde adieresis aring amacron abreve aogonek c ccedilla cacute ccircumflex cdotaccent ccaron d dcaron e egrave eacute ecircumflex edieresis emacron ebreve edotaccent eogonek ecaron g gcircumflex gbreve gdotaccent uni0123 o ograve oacute ocircumflex otilde odieresis omacron obreve ohungarumlaut q s sacute scircumflex scedilla scaron uni0219 u ugrave uacute ucircumflex udieresis utilde umacron ubreve uring uhungarumlaut uogonek uni0430 uni0441 uni0435 uni0450 uni0451 uni0434 uni043E uni0454 uni044E uni044C uni0437 uni0444 uni044F ae oe oslash] -45;
+  pos [T uni0162 Tcaron uni021A uni0422 uni0413 uni0403 uni0490 F P uni0420 Y Yacute Ycircumflex Ydieresis Ygrave V W Wcircumflex Wgrave Wacute Wdieresis uni0423 uni040E uni04EE] [period comma ellipsis] -90;
+  pos [A Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni0410 uni0414 uni041B] [T uni0162 Tcaron uni021A uni0422 V W Wcircumflex Wgrave Wacute Wdieresis Y Yacute Ycircumflex Ydieresis Ygrave uni0423 uni040E uni04EE] -55;
+  pos [T uni0162 Tcaron uni021A uni0422 V W Wcircumflex Wgrave Wacute Wdieresis Y Yacute Ycircumflex Ydieresis Ygrave uni0423 uni040E uni04EE] [A Agrave Aacute Acircumflex Atilde Adieresis Aring Amacron Abreve Aogonek uni0410 uni0414 uni041B] -55;
+  pos [L Lacute uni013B Lcaron uni042C uni042A] [T uni0162 Tcaron uni021A uni0422 V W Wcircumflex Wgrave Wacute Wdieresis Y Yacute Ycircumflex Ydieresis Ygrave uni0423 uni040E uni04EE] -60;
+  pos [r racute uni0157 rcaron uni0433 uni0453 uni0491] [period comma ellipsis] -45;
+} kern;
